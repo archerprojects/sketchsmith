@@ -32,13 +32,10 @@ components, layers, paint, guides and labels.
 
 ## Install
 
-SketchSmith is released **on GitHub only**: it is not on Flathub. Each release on the
+SketchSmith is currently released **on GitHub only**: it is not on Flathub. Each release on the
 [releases page](https://github.com/archerprojects/sketchsmith/releases) has a `.flatpak`
-file, and that file is **not self-contained**. It needs a *runtime*: the shared base of
-libraries every Flatpak app runs on. SketchSmith uses the **freedesktop 26.08 runtime**,
-and that comes from Flathub. So Flathub supplies only the runtime; SketchSmith itself
-comes from GitHub. Install them in this order, each step one command pasted into a
-terminal (**Ctrl+Alt+T**).
+file that is **not self-contained**. It requires the *runtime*: **freedesktop 26.08 runtime**,
+that is supplied from Flathub.
 
 > [!IMPORTANT]
 > **Install with the commands below. Don't use Software Manager or any other app store
@@ -48,32 +45,11 @@ terminal (**Ctrl+Alt+T**).
 
 ### Required runtimes
 
-SketchSmith needs these, all from Flathub. Steps 1 and 2 below install them; you never
-install the graphics drivers by hand.
+SketchSmith requires the following runtimes to be installed on your system:
 
-| Runtime | What it is | Needed | Link |
-|---|---|---|---|
-| `org.freedesktop.Platform//26.08` | The base runtime: the libraries SketchSmith runs on | Always (step 2) | [freedesktop SDK](https://freedesktop-sdk.io/) · [source](https://gitlab.com/freedesktop-sdk/freedesktop-sdk) |
-| `org.freedesktop.Platform.GL.default//26.08` | Graphics drivers (Mesa: Intel, AMD and others) | Always; installed with the runtime | [freedesktop SDK](https://gitlab.com/freedesktop-sdk/freedesktop-sdk) |
-| `org.freedesktop.Platform.GL.nvidia-<driver version>` | NVIDIA's graphics driver, matching the one on your system | NVIDIA cards only; installed with the runtime | [Flathub](https://github.com/flathub/org.freedesktop.Platform.GL.nvidia) |
-| Flathub remote | Where the runtimes come from | Always (step 1) | [flathub.flatpakrepo](https://dl.flathub.org/repo/flathub.flatpakrepo) |
-
-Flatpak may also install the runtime's Locale, VAAPI and codecs extensions. SketchSmith
-doesn't use them; they are optional.
-
-To check what is installed:
-
-```bash
-flatpak list --runtime | grep -E 'Platform.*26.08|GL'
-```
-
-> [!NOTE]
-> **NVIDIA cards:** after a driver update, the extension matching the new driver may
-> not be installed yet. Fetch it with:
->
-> ```bash
-> flatpak update --user
-> ```
+- [`org.freedesktop.Platform//26.08`](https://freedesktop-sdk.io/)
+- [`org.freedesktop.Platform.GL.default//26.08`](https://gitlab.com/freedesktop-sdk/freedesktop-sdk) (installed with the runtime)
+- NVIDIA cards: [`org.freedesktop.Platform.GL.nvidia`](https://github.com/flathub/org.freedesktop.Platform.GL.nvidia), matching your driver (installed with the runtime)
 
 **1. Flatpak and the Flathub remote (once per machine).** Linux Mint and Fedora already
 have Flatpak; on Ubuntu or Debian, first run `sudo apt install flatpak` (other systems:
