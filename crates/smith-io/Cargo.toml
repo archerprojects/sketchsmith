@@ -1,0 +1,32 @@
+# SketchSmith — smith-io crate manifest
+# Version 1.0.0 — Thursday 12 November 2026
+
+[package]
+name = "smith-io"
+description = "SketchSmith: native format, imports and exports"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+
+[dependencies]
+smith-geom.workspace = true
+smith-model.workspace = true
+smith-ops.workspace = true
+smith-skp.workspace = true
+glam.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+gltf-json.workspace = true
+image.workspace = true
+flate2.workspace = true
+crc32fast.workspace = true
+quick-xml.workspace = true
+thiserror.workspace = true
+log.workspace = true
+
+[lints]
+workspace = true

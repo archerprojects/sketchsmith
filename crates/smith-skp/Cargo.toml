@@ -1,0 +1,19 @@
+# SketchSmith — smith-skp crate manifest
+# Version 1.0.0 — Thursday 12 November 2026
+
+[package]
+name = "smith-skp"
+description = "SketchSmith: .skp reader (OpenSKP port)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+
+[dependencies]
+thiserror.workspace = true
+
+[lints]
+workspace = true

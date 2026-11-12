@@ -1,0 +1,14 @@
+# SketchSmith — desktop entry
+# Version 1.0.0 (initial release) — Thursday 12 November 2026
+[Desktop Entry]
+Type=Application
+Name=SketchSmith
+GenericName=3D Sketching
+Comment=Sketch ideas in 3D and hand them off
+Exec=sketchsmith %f
+Icon=io.github.archerprojects.SketchSmith
+Terminal=false
+Categories=Graphics;3DGraphics;
+Keywords=3D;sketch;model;design;jewelry;
+MimeType=model/gltf-binary;application/vnd.sketchup.skp;
+StartupWMClass=io.github.archerprojects.SketchSmith

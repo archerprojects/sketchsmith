@@ -1,0 +1,55 @@
+# SketchSmith — Flatpak manifest
+# Version 1.0.0 (initial release) — Thursday 12 November 2026
+#
+# Built from the working tree. Releases are bundles on GitHub (not Flathub).
+# Regenerate cargo-sources.json whenever Cargo.lock changes:
+#   python3 flatpak-cargo-generator.py Cargo.lock -o packaging/flatpak/cargo-sources.json
+
+id: io.github.archerprojects.SketchSmith
+runtime: org.freedesktop.Platform
+runtime-version: '26.08'
+sdk: org.freedesktop.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.rust-stable
+command: sketchsmith
+
+# Host file access, as Blender's and Inkscape's Flatpaks have: Save Version
+# and backups write beside the open file without a dialog, and files on
+# other drives (/media) are reachable. Open and Save As still use the
+# desktop's dialogs through the portal.
+finish-args:
+  - --share=ipc
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --device=dri
+  - --filesystem=host
+
+modules:
+  - name: sketchsmith
+    buildsystem: simple
+    build-options:
+      append-path: /usr/lib/sdk/rust-stable/bin
+      env:
+        CARGO_HOME: /run/build/sketchsmith/cargo
+        CARGO_NET_OFFLINE: 'true'
+    build-commands:
+      - cargo --offline fetch --manifest-path Cargo.toml --verbose
+      - cargo build --offline --release -p sketchsmith
+      - install -Dm0755 target/release/sketchsmith ${FLATPAK_DEST}/bin/sketchsmith
+      - install -Dm0644 packaging/flatpak/${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
+      - install -Dm0644 packaging/flatpak/${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
+      - install -Dm0644 packaging/flatpak/${FLATPAK_ID}.mime.xml ${FLATPAK_DEST}/share/mime/packages/${FLATPAK_ID}.xml
+      - install -Dm0644 LICENSE ${FLATPAK_DEST}/share/licenses/${FLATPAK_ID}/LICENSE
+      - install -Dm0644 THIRD_PARTY_NOTICES.md ${FLATPAK_DEST}/share/licenses/${FLATPAK_ID}/THIRD_PARTY_NOTICES.md
+      - install -Dm0644 packaging/flatpak/${FLATPAK_ID}.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
+    sources:
+      - type: dir
+        path: ../..
+        # Never copy build output or flatpak-builder state into the build sandbox.
+        skip:
+          - target
+          - build-dir
+          - .flatpak-builder
+          - repo
+          - dist
+      - cargo-sources.json

@@ -1,0 +1,16 @@
+# SketchSmith — git ignore rules
+# Version 1.0.0 (initial release) — Thursday 12 November 2026
+
+# Cargo build output
+/target/
+/dist/
+/node_modules/
+
+# flatpak-builder output and caches
+/build-dir/
+/.flatpak-builder/
+/repo/
+*.flatpak
+
+# Claude Code local settings (never published)
+/.claude/

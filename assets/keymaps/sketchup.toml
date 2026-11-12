@@ -1,0 +1,70 @@
+# SketchSmith — SketchUp keymap preset
+# Version 1.0.0 (initial release) — Thursday 12 November 2026
+#
+# Key names follow egui (`Z`, `Home`, `Escape`, `1` …); modifiers are
+# `Ctrl+`, `Shift+`, `Alt+`. Mouse navigation is common to both presets:
+# middle drag orbits, Shift + middle drag pans, the wheel zooms toward the cursor.
+#
+# Built in and never changed: changing a key in Preferences → Keys copies
+# this table into Custom (`keymap-custom.toml` in the config folder).
+# Taps are a right-hand modifier pressed and released alone.
+# Tool bindings are added as tools are built.
+
+name = "SketchUp"
+
+[keys]
+orbit_tool = "O"
+pan_tool = "H"
+zoom_tool = "Z"
+zoom_extents = "Shift+Z"
+cancel = "Escape"
+select_tool = "Space"
+select_all = "Ctrl+A"
+select_none = "Ctrl+T"
+toggle_mode = "Tab"
+view_pie = "`"
+line_tool = "L"
+rectangle_tool = "R"
+circle_tool = "C"
+arc_tool = "A"
+undo = "Ctrl+Z"
+# Clipboard.
+cut = "Ctrl+X"
+copy = "Ctrl+C"
+paste = "Ctrl+V"
+# The sidebar (layers, outliner, groups).
+toggle_sidebar = "N"
+# On with Ctrl, off with Alt.
+hide = "Ctrl+H"
+unhide = "Alt+H"
+hide_others = "Shift+H"
+make_group = "Ctrl+G"
+explode = "Alt+G"
+lock = "Ctrl+L"
+unlock = "Alt+L"
+# Organize.
+make_component = "G"
+redo = "Ctrl+Shift+Z"
+# Files.
+new_file = "Ctrl+N"
+open_file = "Ctrl+O"
+save_file = "Ctrl+S"
+save_file_as = "Ctrl+Shift+S"
+save_version = "Ctrl+Alt+S"
+offset_tool = "F"
+rotate_tool = "Q"
+scale_tool = "S"
+move_tool = "M"
+extrude_tool = "P"
+eraser_tool = "E"
+tape_measure_tool = "T"
+delete = "Delete"
+quit = "Ctrl+Q"
+# Show the last shape's values in the Operation Inputs again (as Blender).
+adjust_last = "F9"
+# Rotated Rectangle and Polygon have no default key; add one here, e.g.
+# polygon_tool = "Shift+P"
+
+[taps]
+view_pie = "RightAlt"
+toggle_sidebar = "RightCtrl"

@@ -1,0 +1,44 @@
+# SketchSmith — application binary manifest
+# Version 1.0.0 (initial release) — Thursday 12 November 2026
+
+[package]
+name = "sketchsmith"
+description = "SketchSmith: a light, Linux-native 3D sketching application"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+
+[[bin]]
+name = "sketchsmith"
+path = "src/main.rs"
+
+[dependencies]
+# Top of the dependency graph.
+smith-tools.workspace = true
+smith-ops.workspace = true
+smith-render.workspace = true
+smith-io.workspace = true
+smith-geom.workspace = true
+smith-model.workspace = true
+smith-infer.workspace = true
+
+winit.workspace = true
+wgpu.workspace = true
+egui.workspace = true
+egui-winit.workspace = true
+egui-wgpu.workspace = true
+pollster.workspace = true
+directories.workspace = true
+log.workspace = true
+env_logger.workspace = true
+anyhow.workspace = true
+serde.workspace = true
+toml.workspace = true
+rfd.workspace = true
+
+[lints]
+workspace = true

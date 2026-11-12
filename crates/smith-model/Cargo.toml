@@ -1,0 +1,21 @@
+# SketchSmith — smith-model crate manifest
+# Version 1.0.0 (initial release) — Thursday 12 November 2026
+
+[package]
+name = "smith-model"
+description = "SketchSmith: topology, entities, undo"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+
+[dependencies]
+smith-geom.workspace = true
+smallvec.workspace = true
+thiserror.workspace = true
+
+[lints]
+workspace = true

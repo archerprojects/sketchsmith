@@ -1,0 +1,22 @@
+# SketchSmith — smith-geom crate manifest
+# Version 1.0.0 (initial release) — Thursday 12 November 2026
+
+[package]
+name = "smith-geom"
+description = "SketchSmith: math, predicates, tolerances, curves"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+
+[dependencies]
+glam.workspace = true
+robust.workspace = true
+spade.workspace = true
+thiserror.workspace = true
+
+[lints]
+workspace = true

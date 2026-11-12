@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <!--
+    SketchSmith — application icon (placeholder, original artwork)
+    Version 1.0.0 (initial release) — Thursday 12 November 2026
+    An isometric block drawn as a sketch, with a red/green/blue axis tripod.
+    The final icon comes with the release.
+  -->
+  <rect x="8" y="8" width="112" height="112" rx="24" fill="#2b3036"/>
+  <g stroke-linejoin="round" stroke-linecap="round">
+    <!-- block faces -->
+    <path d="M64 26 L98 45 L64 64 L30 45 Z" fill="#e9ecef" stroke="#f8f9fa" stroke-width="3"/>
+    <path d="M30 45 L64 64 L64 102 L30 83 Z" fill="#adb5bd" stroke="#f8f9fa" stroke-width="3"/>
+    <path d="M98 45 L64 64 L64 102 L98 83 Z" fill="#e8913a" stroke="#f8f9fa" stroke-width="3"/>
+    <!-- axis tripod -->
+    <path d="M20 108 L36 99" stroke="#e5484d" stroke-width="4"/>
+    <path d="M20 108 L20 90" stroke="#4c8bf5" stroke-width="4"/>
+    <path d="M20 108 L33 115" stroke="#46a758" stroke-width="4"/>
+  </g>
+</svg>

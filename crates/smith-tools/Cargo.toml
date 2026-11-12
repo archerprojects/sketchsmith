@@ -1,0 +1,22 @@
+# SketchSmith — smith-tools crate manifest
+# Version 1.0.0 (initial release) — Thursday 12 November 2026
+
+[package]
+name = "smith-tools"
+description = "SketchSmith: interactive tool state machines"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+
+[dependencies]
+smith-geom.workspace = true
+smith-model.workspace = true
+smith-ops.workspace = true
+smith-infer.workspace = true
+
+[lints]
+workspace = true

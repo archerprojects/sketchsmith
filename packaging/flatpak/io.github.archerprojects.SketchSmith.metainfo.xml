@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  SketchSmith — AppStream metainfo
+  Version 1.0.0 (initial release) — Thursday 12 November 2026
+  Screenshots are in the repository's screenshots/ folder, added by rjv before the push.
+-->
+<component type="desktop-application">
+  <id>io.github.archerprojects.SketchSmith</id>
+  <name>SketchSmith</name>
+  <summary>Sketch ideas in 3D and hand them off</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <developer id="io.github.archerprojects">
+    <name>archerprojects</name>
+  </developer>
+  <description>
+    <p>
+      SketchSmith is a light, precise 3D sketching application for Linux in the
+      spirit of SketchUp's push-and-pull modelling. Draw an idea quickly with
+      inference snapping and typed dimensions, then hand it off to Blender, a
+      slicer, CAD software, or a dimensioned drawing for a builder.
+    </p>
+    <ul>
+      <li>Draw edges and faces; extrude them, along paths too; loft, revolve and skin them</li>
+      <li>Move, rotate, scale, bevel, fuse, knife and repair geometry</li>
+      <li>Paint, label, dimension and section models</li>
+      <li>Export to OBJ, STL, glTF, 3MF, STEP, DXF, PDF, SVG and PNG</li>
+      <li>Import OBJ, STL, DAE, SVG, glTF and 3MF files</li>
+      <li>Open SketchUp .skp files (2013 to 2020) with their groups, components, layers, paint, guides and labels</li>
+      <li>Keymaps: SketchSmith, SketchUp, Blender or your own</li>
+    </ul>
+    <p>
+      SketchSmith is not affiliated with or endorsed by Trimble. "SketchUp" is
+      used only to name a file format SketchSmith can read.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.archerprojects.SketchSmith.desktop</launchable>
+  <url type="homepage">https://github.com/archerprojects/sketchsmith</url>
+  <url type="bugtracker">https://github.com/archerprojects/sketchsmith/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/archerprojects/sketchsmith/main/screenshots/sketchsmith1.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/archerprojects/sketchsmith/main/screenshots/sketchsmith2.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/archerprojects/sketchsmith/main/screenshots/sketchsmith3.png</image>
+    </screenshot>
+  </screenshots>
+  <provides>
+    <binary>sketchsmith</binary>
+    <mediatype>model/gltf-binary</mediatype>
+    <mediatype>application/vnd.sketchup.skp</mediatype>
+  </provides>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+  <categories>
+    <category>Graphics</category>
+    <category>3DGraphics</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="1.0.0" date="2026-11-12" type="stable">
+      <url type="details">https://github.com/archerprojects/sketchsmith/releases/tag/v1.0.0</url>
+      <description>
+        <p>Initial release.</p>
+        <ul>
+          <li>Drawing, modify, tweak, generate, measure and repair tools</li>
+          <li>Paint, labels, dimensions and section planes</li>
+          <li>Export to OBJ, STL, glTF, 3MF, STEP, DXF, PDF, SVG and PNG</li>
+          <li>Import OBJ, STL, DAE, SVG, glTF and 3MF; open SketchUp .skp files (2013 to 2020)</li>
+          <li>Keymaps: SketchSmith, SketchUp, Blender or your own</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>

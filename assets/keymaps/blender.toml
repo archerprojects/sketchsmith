@@ -1,0 +1,81 @@
+# SketchSmith — Blender keymap preset
+# Version 1.0.0 (initial release) — Thursday 12 November 2026
+#
+# Mouse navigation is common to both presets: middle drag orbits,
+# Shift + middle drag pans, the wheel zooms toward the cursor (in Blender this is
+# "Zoom to Mouse Position", here always on).
+#
+# Numpad: the windowing toolkit does not distinguish numpad digits from the
+# top-row digits, so this preset uses Blender's "Emulate Numpad" layout — the
+# digit keys act as the numpad.
+#
+# Built in and never changed: changing a key in Preferences → Keys copies
+# this table into Custom (`keymap-custom.toml` in the config folder).
+# Taps are a right-hand modifier pressed and released alone.
+
+name = "Blender"
+
+[keys]
+view_front = "1"
+view_back = "Ctrl+1"
+view_right = "3"
+view_left = "Ctrl+3"
+view_top = "7"
+view_bottom = "Ctrl+7"
+view_iso = "9"
+toggle_projection = "5"
+zoom_extents = "Home"
+cancel = "Escape"
+select_all = "A"
+select_none = "Alt+A"
+toggle_mode = "Tab"
+view_pie = "`"
+line_tool = "L"
+# R is Rotate in Blender, so Rectangle moves to Shift+R.
+rectangle_tool = "Shift+R"
+circle_tool = "C"
+# A is Select All in Blender, so Arc moves to Shift+A.
+arc_tool = "Shift+A"
+undo = "Ctrl+Z"
+# Clipboard.
+cut = "Ctrl+X"
+copy = "Ctrl+C"
+paste = "Ctrl+V"
+# The sidebar (layers, outliner, groups).
+toggle_sidebar = "N"
+# On with Ctrl, off with Alt.
+hide = "Ctrl+H"
+unhide = "Alt+H"
+hide_others = "Shift+H"
+make_group = "Ctrl+G"
+explode = "Alt+G"
+lock = "Ctrl+L"
+unlock = "Alt+L"
+redo = "Ctrl+Shift+Z"
+# Files.
+new_file = "Ctrl+N"
+open_file = "Ctrl+O"
+save_file = "Ctrl+S"
+save_file_as = "Ctrl+Shift+S"
+save_version = "Ctrl+Alt+S"
+loop_cut_tool = "Ctrl+R"
+knife_tool = "K"
+toggle_proportional = "O"
+# Offset takes Blender's Inset key.
+offset_tool = "I"
+rotate_tool = "R"
+scale_tool = "S"
+move_tool = "G"
+# Extrude takes Blender's Extrude key.
+extrude_tool = "E"
+tape_measure_tool = "T"
+delete = "X"
+quit = "Ctrl+Q"
+# Show the last shape's values in the Operation Inputs again (as Blender).
+adjust_last = "F9"
+# Rotated Rectangle and Polygon have no default key; add one here, e.g.
+# polygon_tool = "Shift+P"
+
+[taps]
+view_pie = "RightAlt"
+toggle_sidebar = "RightCtrl"

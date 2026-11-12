@@ -1,0 +1,94 @@
+# SketchSmith — workspace manifest
+# Version 1.0.0 — Thursday 12 November 2026
+#
+# Dependencies run one way only: smith-geom → smith-model → smith-ops →
+# smith-infer → smith-tools → sketchsmith; smith-io and smith-render sit beside
+# them. Exact third-party versions are locked in Cargo.lock.
+
+[workspace]
+resolver = "3"
+members = [
+    "crates/smith-geom",
+    "crates/smith-model",
+    "crates/smith-ops",
+    "crates/smith-infer",
+    "crates/smith-tools",
+    "crates/smith-render",
+    "crates/smith-io",
+    "crates/smith-skp",
+    "crates/sketchsmith",
+]
+
+[workspace.package]
+version = "1.0.0"
+edition = "2024"
+# egui 0.36 / egui-wgpu 0.36 require Rust 1.95.
+rust-version = "1.95"
+license = "GPL-3.0-or-later"
+authors = ["archerprojects"]
+repository = "https://github.com/archerprojects/sketchsmith"
+homepage = "https://github.com/archerprojects/sketchsmith"
+
+[workspace.dependencies]
+# Internal crates.
+smith-geom = { path = "crates/smith-geom" }
+smith-model = { path = "crates/smith-model" }
+smith-ops = { path = "crates/smith-ops" }
+smith-infer = { path = "crates/smith-infer" }
+smith-tools = { path = "crates/smith-tools" }
+smith-render = { path = "crates/smith-render" }
+smith-io = { path = "crates/smith-io" }
+smith-skp = { path = "crates/smith-skp" }
+
+# Windowing, GPU and UI. Further crates are added when first needed.
+winit = "0.30.13"
+wgpu = "30.0.1"
+egui = "0.36.2"
+egui-winit = "0.36.2"
+egui-wgpu = { version = "0.36.2", features = ["winit", "wayland", "x11"] }
+pollster = "1.0.1"
+bytemuck = { version = "1.25.2", features = ["derive"] }
+
+# Geometry and model.
+glam = "0.34.1"
+robust = "1.2.0"
+smallvec = "1.16.3"
+spade = "2.15.1"
+
+# Support.
+directories = "6.0.0"
+log = "0.4.34"
+env_logger = "0.11.11"
+anyhow = "1.0.104"
+thiserror = "2.0.21"
+serde = { version = "1.0.229", features = ["derive"] }
+toml = "1.1.8"
+
+# Files. serde_json is held at 1.0.151 (July 2026): 1.0.152–154 were all
+# published within a day of each other in the week before the native format was built; revisit after they age.
+# float_roundtrip: f64 values written to JSON read back bit-identical (exact model data).
+serde_json = { version = "=1.0.151", features = ["float_roundtrip"] }
+gltf-json = { version = "1.4.1", features = ["extensions", "names"] }
+# Texture images: PNG and JPEG decoding only (already locked through arboard).
+image = { version = "0.25.10", default-features = false, features = ["png", "jpeg"] }
+rfd = "0.17.2"
+# 3MF packages (zip): deflate and its checksum, both already locked through image.
+flate2 = "1.1.10"
+crc32fast = "1.5.2"
+# XML imports (DAE, SVG): already locked through the windowing crates.
+quick-xml = "0.41.0"
+
+[workspace.lints.rust]
+missing_docs = "warn"
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+
+[profile.release]
+lto = "thin"
+
+# Optimise dependencies (wgpu, naga, egui) even in debug builds so the viewport stays responsive
+# while the workspace's own crates keep fast incremental compiles.
+[profile.dev.package."*"]
+opt-level = 2

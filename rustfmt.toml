@@ -1,0 +1,4 @@
+# SketchSmith — rustfmt configuration
+# Version 1.0.0 — Thursday 12 November 2026
+edition = "2024"
+max_width = 100
